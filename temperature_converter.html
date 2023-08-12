@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TEMPRATURE CONVERTER</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!--- CSS STARTS FROM HERE --->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container{
+            width: 40%;
+            height: 60vh;
+            background-color: white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            justify-content: center;
+            display: flex;
+        }
+        .container h1 
+        {
+            color: blue;
+            font-weight: 600;
+            font-size: 25px;
+            text-align: center;
+        }
+        .converter-row
+        {
+            display: flex;
+            width: 45;
+            justify-content: space-between;
+            align-items: center;
+            background-color: skyblue;
+            border-radius: 10px;
+            padding: 40px 20px;
+        }
+        .col{
+            flex-basis: 40%;
+            text-align: center;
+        }
+        .col label{
+            font-size: 10px;
+            font-weight: 500px;
+            margin-bottom: 10px;
+            color: #eee;
+        }
+        .col input{
+            width: 150px;
+            height: 40px;
+            background-color: green;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <br>Temprature Converter
+        </h1>
+        <div class="col">
+            <level>Fahrenheit</level>
+            <input type="number" id="fahrenheit">
+            </div>
+            <div class="col">
+                <level>Celsius</level>
+            <input type="number" id="celsius">
+            </div>
+    </div>
+    <!--Java script starts from here-->
+     <script>
+        let celsius= document.getElementById('celsius');
+        let fahrenheit= document.getElementById('fahrenheit');
+       
+        celsius.oninput=function(){
+            let f =(parseFloat(celsius.value)*9)/5+32;
+            fahrenheit.value=parseFloat(f.toFixed(2));
+
+        }
+        fahrenheit.oninput=function(){
+            let c =((parseFloat(fahrenheit.value)-32)*5)/9;
+            celsius.value=parseFloat(c.toFixed(2));
+
+        }
+       
+    </script> 
+    
+</body>
+</html>>
